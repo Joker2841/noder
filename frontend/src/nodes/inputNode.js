@@ -3,6 +3,7 @@ import { createNodeType } from './createNodeType';
 export const InputNode = createNodeType({
   title: 'Input',
   icon: '→',
+  accent: '#6c5acd',
   fields: [
     {
       name: 'inputName',
@@ -21,5 +22,13 @@ export const InputNode = createNodeType({
       ],
     },
   ],
-  handles: [{ id: 'value', type: 'source', position: 'right' }],
+  handles: (data) => [
+    {
+      id: 'value',
+      type: 'source',
+      position: 'right',
+      label: 'Value',
+      dataType: data?.inputType === 'File' ? 'file' : 'text',
+    },
+  ],
 });

@@ -7,6 +7,7 @@ export const createNodeType = (config) => {
       id={id}
       title={config.title}
       icon={config.icon}
+      accent={config.accent}
       handles={config.handles}
       data={data}
       style={config.style}
